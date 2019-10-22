@@ -64,30 +64,52 @@
   </v-app>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
-    }
-  }
+<script lang="ts">
+import { createComponent, reactive, onMounted } from '@vue/composition-api'
+
+type Item = {
+  icon: string
+  title: string
+  to: string
 }
+
+const component = createComponent({
+  setup() {
+    console.log('created')
+
+    onMounted(() => console.log('mounted'))
+
+    const clipped = false
+    const drawer = false
+    const fixed = false
+    const items = reactive<Item[]>([
+      {
+        icon: 'mdi-apps',
+        title: 'Welcome',
+        to: '/',
+      },
+      {
+        icon: 'mdi-chart-bubble',
+        title: 'Inspire',
+        to: '/inspire',
+      },
+    ])
+    const miniVariant = false
+    const right = false
+    const rightDrawer = false
+    const title = reactive('Vuetify.js')
+    return {
+      clipped,
+      drawer,
+      fixed,
+      items,
+      miniVariant,
+      right,
+      rightDrawer,
+      title,
+    }
+  },
+})
+
+export default component
 </script>
