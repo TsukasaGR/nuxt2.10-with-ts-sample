@@ -1,0 +1,1 @@
+# nuxt2.10-with-ts-sample
