@@ -31,7 +31,7 @@ const component = createComponent({
     const pageNotFound = '404 Not Found'
     const otherError = 'An error occurred'
 
-    // TODO: 本来はnuxtのheadだがうまく動かないので暫定でこちらに置いている
+    // TODO: 本来はnuxtのheadだがうまく動かないので移行までひとまずこちらに置いておく
     function head() {
       const title =
         props.error.hasOwnProperty('statusCode') &&
@@ -52,28 +52,6 @@ const component = createComponent({
 })
 
 export default component
-// export default {
-//   layout: 'empty',
-//   props: {
-//     error: {
-//       type: Object,
-//       default: null,
-//     },
-//   },
-//   head() {
-//     const title =
-//       this.error.statusCode === 404 ? this.pageNotFound : this.otherError
-//     return {
-//       title,
-//     }
-//   },
-//   data() {
-//     return {
-//       pageNotFound: '404 Not Found',
-//       otherError: 'An error occurred',
-//     }
-//   },
-// }
 </script>
 
 <style scoped>
