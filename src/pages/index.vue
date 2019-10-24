@@ -65,14 +65,20 @@
   </v-layout>
 </template>
 
-<script>
+<script lang="ts">
+import { createComponent } from '@vue/composition-api'
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
-export default {
+const component = createComponent({
   components: {
     Logo,
     VuetifyLogo,
   },
-}
+  setup() {
+    return {}
+  },
+})
+
+export default component
 </script>

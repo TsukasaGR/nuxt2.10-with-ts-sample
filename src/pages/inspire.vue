@@ -13,3 +13,15 @@
     </v-flex>
   </v-layout>
 </template>
+
+<script lang="ts">
+import { createComponent } from '@vue/composition-api'
+
+const component = createComponent({
+  setup() {
+    return {}
+  },
+})
+
+export default component
+</script>
